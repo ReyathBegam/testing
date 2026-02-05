@@ -1,0 +1,12 @@
+<h1>Photo Feed</h1>
+
+<a href="{% url 'upload' %}">Upload Photo</a>
+
+{% for post in posts %}
+<div>
+    <p>{{ post.user.username }}</p>
+    <img src="{{ post.image.url }}" width="300">
+    <p>{{ post.caption }}</p>
+    <p>{{ post.created_at }}</p>
+</div>
+{% endfor %}
