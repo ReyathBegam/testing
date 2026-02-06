@@ -43,3 +43,17 @@ class UploadView(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         form.instance.user = self.request.user
         return super().form_valid(form)
+# register()
+
+# 👉 Creates new user
+# 👉 Automatically logs user in after register
+
+# HomeView
+
+# 👉 Shows all posts
+# 👉 Latest photos first
+
+# UploadView
+
+# 👉 Only logged-in users can upload
+# 👉 Automatically attaches logged-in user to post
