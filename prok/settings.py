@@ -9,6 +9,13 @@ https://docs.djangoproject.com/en/6.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/6.0/ref/settings/
 """
+import cloudinary
+cloudinary.config(
+    cloud_name='duxptbmy1',
+    api_key='618248455475743',
+    api_secret='CIzbkug-xo8MMfZada7JeTXWknc',
+)
+
 
 from pathlib import Path
 
@@ -38,6 +45,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     'posts',
+    'cloudinary_storage',
+    'cloudinary',
 ]
 
 MIDDLEWARE = [

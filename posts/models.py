@@ -3,13 +3,14 @@ from django.db import models
 # Create your models here.
 
 from django.contrib.auth.models import User
-
+from cloudinary.models import CloudinaryField
 class Post(models.Model):
     #Connects post to logged-in user.
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     #Stores uploaded photo.
     #Images saved inside:
-    image = models.ImageField(upload_to='posts/')
+    image = CloudinaryField('image')
+    #image = models.ImageField(upload_to='posts/')
     caption = models.TextField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
