@@ -8,6 +8,17 @@ from .models import Post
 #👉 Uses Django built-in secure user system
 #👉 Automatically hashes passwords
 class RegisterForm(UserCreationForm):
+    username = forms.CharField(max_length=150, help_text='')  # remove default help text
+    password1 = forms.CharField(
+        label='Password',
+        widget=forms.PasswordInput,
+        help_text=''  # remove default password rules text
+    )
+    password2 = forms.CharField(
+        label='Confirm Password',
+        widget=forms.PasswordInput,
+        help_text=''  # remove default confirm password text
+    )
     class Meta:
         model = User
         fields = ['username', 'password1', 'password2']
